@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vionnie Castañeda | Professional Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #f8fafc, #eef2f7);
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(6px);
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: .3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #1e40af;
+        }
+
+        /* HERO */
+        header {
+            padding: 190px 10% 120px 10%;
+            background: linear-gradient(135deg, #ffffff, #f1f5f9);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        header h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #475569;
+        }
+
+        .hero-btn {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 12px 26px;
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 10%;
+            background: white;
+            margin: 50px auto;
+            border-radius: 18px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: .3s;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        section h2::after {
+            content: "";
+            width: 45px;
+            height: 3px;
+            background: #2563eb;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            border-radius: 3px;
+        }
+
+        /* FLEX LAYOUT */
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .flex img {
+            width: 280px;
+            border-radius: 14px;
+            object-fit: cover;
+            transition: .4s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .flex img:hover {
+            transform: scale(1.04);
+        }
+
+        .flex div {
+            flex: 1;
+        }
+
+        /* LIST STYLE */
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* COLLAGE */
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .collage img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: .4s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .collage img:hover {
+            transform: scale(1.05);
+        }
+
+        .name-below {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: #1e3a8a;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1e293b;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 35px;
+            margin-top: 70px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            nav {
+                padding: 15px 25px;
+            }
+
+            header {
+                padding: 160px 6% 90px 6%;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .flex {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .flex img {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* DESTINATIONS */
+        .destination-card {
+            margin-bottom: 60px;
+        }
+
+        .destination-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .destination-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: all .3s ease;
+            filter: brightness(95%);
+        }
+
+        .destination-grid img:hover {
+            transform: scale(1.03);
+            filter: brightness(100%);
+        }
+
+        .destination-card h4 {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        .destination-card ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .destination-card ul li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Vionnie Castañeda</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#friend">Best Friend</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Vionnie Castañeda</h1>
+        <p>
+            Aspiring Hospitality & Tourism professional committed to excellence,
+            leadership, and sustainable travel development.
+        </p>
+        <a href="#about" class="hero-btn">Learn More</a>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="flex">
+            <img src="img/pr1.jpg" alt="Profile">
+            <div>
+                <p>
+                    I am dedicated to building a career rooted in professionalism, service excellence,
+                    and cultural appreciation. My focus is on developing strategic tourism solutions
+                    that create lasting impact while delivering meaningful guest experiences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DREAM DESTINATIONS -->
+    <section id="destinations">
+        <h2>My Dream Destinations</h2>
+
+        <div class="destination-card">
+            <h3>Canada</h3>
+            <div class="destination-grid">
+                <img src="img/canada1.jpg" alt="Canada Image 1">
+                <img src="img/canada2.jpg" alt="Canada Image 2">
+                <img src="img/canada3.jpg" alt="Canada Image 3">
+            </div>
+            <p>
+                Canada represents innovation, diversity, and breathtaking landscapes.
+                Its tourism structure and cultural inclusivity make it a destination
+                I aspire to experience both personally and professionally.
+            </p>
+            <h4>Top 3 Travel Priorities:</h4>
+            <ul>
+                <li>Explore Banff National Park and the Rocky Mountains.</li>
+                <li>Experience multicultural city life in Toronto or Vancouver.</li>
+                <li>Learn about sustainable tourism practices in eco-focused regions.</li>
+            </ul>
+        </div>
+
+        <div class="destination-card">
+            <h3>Switzerland</h3>
+            <div class="destination-grid">
+                <img src="img/swiss1.jpg" alt="Switzerland Image 1">
+                <img src="img/swiss2.jpg" alt="Switzerland Image 2">
+                <img src="img/swiss3.jpg" alt="Switzerland Image 3">
+            </div>
+            <p>
+                Switzerland is globally recognized for hospitality excellence,
+                precision, and high-end tourism services.
+                It embodies quality, structure, and world-class destination management.
+            </p>
+            <h4>Top 3 Travel Priorities:</h4>
+            <ul>
+                <li>Visit the Swiss Alps and experience mountain tourism.</li>
+                <li>Explore luxury hospitality standards in Zurich.</li>
+                <li>Discover cultural heritage sites and historic towns.</li>
+            </ul>
+        </div>
+
+        <div class="destination-card">
+            <h3>Finland</h3>
+            <div class="destination-grid">
+                <img src="img/finland1.jpg" alt="Finland Image 1">
+                <img src="img/finland2.jpg" alt="Finland Image 2">
+                <img src="img/finland3.jpg" alt="Finland Image 3">
+            </div>
+            <p>
+                Finland represents innovation, sustainability, and natural beauty.
+                Its balance between modern design and environmental responsibility
+                aligns with my long-term professional vision.
+            </p>
+            <h4>Top 3 Travel Priorities:</h4>
+            <ul>
+                <li>Witness the Northern Lights in Lapland.</li>
+                <li>Experience Finland’s sustainable urban planning in Helsinki.</li>
+                <li>Explore forest tourism and nature-based wellness retreats.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="goals">
+        <h2>Life Goals</h2>
+        <div class="flex">
+            <img src="goals.jpg" alt="Goals">
+            <div>
+                <ul>
+                    <li>Graduate with distinction.</li>
+                    <li>Gain industry experience.</li>
+                    <li>Earn professional certifications.</li>
+                    <li>Promote sustainable tourism initiatives.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Photo Collage</h2>
+        <div class="collage">
+            <img src="img/pr1.jpg">
+            <img src="img/pr2.jpeg">
+            <img src="img/pr3.jpeg">
+            <img src="img/pr4.jpeg">
+            <img src="img/pr5.jpeg">
+        </div>
+        <div class="name-below">Vionnie Castañeda</div>
+    </section>
+
+    <section id="friend">
+        <h2>My Best Friend</h2>
+        <div class="flex">
+            <a href="#"><img src="img/elias.jpeg" alt="Best Friend"></a>
+            <div>
+                <p>
+                    My best friend has been a constant source of strength,
+                    motivation, and encouragement throughout my academic
+                    and personal journey.
+                </p>
+                <p>
+                    Through shared goals, challenges, and achievements,
+                    our friendship represents trust, loyalty, and growth.
+                    Having someone who supports my ambitions and inspires
+                    confidence has played a meaningful role in shaping
+                    my determination to succeed.
+                </p>
+                <h4>What This Friendship Represents:</h4>
+                <ul>
+                    <li>Mutual support and encouragement.</li>
+                    <li>Shared ambition and personal growth.</li>
+                    <li>Trust, loyalty, and long-term connection.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: your@email.com</p>
+        <p>Location: Belize</p>
+    </section>
+
+    <footer>
+        © 2026 Vionnie Castañeda | Professional Portfolio
+    </footer>
+
+</body>
+
+</html>
